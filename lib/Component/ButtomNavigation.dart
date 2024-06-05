@@ -25,6 +25,7 @@ class _ButtomNavigationState extends State<ButtomNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        isExtended: false,
         onPressed: () {
           setState(() {
             currentIndex = 2;
@@ -39,6 +40,7 @@ class _ButtomNavigationState extends State<ButtomNavigation> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      persistentFooterAlignment: AlignmentDirectional.center,
       bottomNavigationBar: BottomAppBar(
         elevation: 2,
         height: 60,
