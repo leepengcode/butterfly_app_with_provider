@@ -1,5 +1,4 @@
 import 'package:butterfly_shop/screens/cart/cartScreen.dart';
-import 'package:butterfly_shop/screens/detail/detailScreen.dart';
 import 'package:butterfly_shop/screens/favorite/favoriteScreen.dart';
 import 'package:butterfly_shop/screens/home/homeScreen.dart';
 import 'package:butterfly_shop/screens/profile/profileScreen.dart';
@@ -15,7 +14,7 @@ class ButtomNavigation extends StatefulWidget {
 class _ButtomNavigationState extends State<ButtomNavigation> {
   int currentIndex = 2;
   late List Screens = const [
-    DetailScreen(),
+    Scaffold(),
     FavoriteScreen(),
     HomeScreen(),
     CartScreen(),

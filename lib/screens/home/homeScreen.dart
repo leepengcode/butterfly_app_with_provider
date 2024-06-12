@@ -1,4 +1,8 @@
+import 'package:butterfly_shop/Component/constant.dart';
+import 'package:butterfly_shop/models/product.dart';
+import 'package:butterfly_shop/screens/home/Widget/Category.dart';
 import 'package:butterfly_shop/screens/home/Widget/ImageSlider.dart';
+import 'package:butterfly_shop/screens/home/Widget/ProductCart.dart';
 import 'package:butterfly_shop/screens/home/Widget/SearchBAR.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {},
                       icon: const Icon(
                         Icons.view_module_rounded,
-                        size: 35,
+                        size: 30,
                       )),
                   IconButton(
                       style: IconButton.styleFrom(
@@ -50,18 +54,52 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {},
                       icon: const Icon(
                         Icons.notifications_none_rounded,
-                        size: 35,
+                        size: 30,
                       ))
                 ],
               ),
               const SizedBox(
                 height: 20,
               ),
-              MySearchBAR(),
+              const MySearchBAR(),
               const SizedBox(
                 height: 20,
               ),
-              ImageSlider(currentSlide: currentSlide, onChange: onPageChanged)
+              ImageSlider(currentSlide: currentSlide, onChange: onPageChanged),
+              const SizedBox(
+                height: 15,
+              ),
+              const CategoryWidget(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Special For You",
+                    style: HeaderStyle,
+                  ),
+                  Text(
+                    "See All",
+                    style: SubStyle,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                padding: EdgeInsets.zero,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 0.75,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10),
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  return ProductWidget(product: products[index]);
+                },
+              )
             ],
           ),
         ),
