@@ -27,7 +27,7 @@ class Product {
       required this.id});
 }
 
-final List<Product> products = [
+final List<Product> all = [
   Product(
     id: 1,
     title: "Wireless Headphones",
@@ -322,24 +322,6 @@ final List<Product> beauty = [
     rate: 4.7,
     quantity: 1,
   ),
-  Product(
-    id: 17,
-    title: "Skin-Care Product",
-    description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
-    image: "assets/images/beauty/skin-care.png",
-    price: 999,
-    seller: "Mr Beast",
-    colors: [
-      Colors.black12,
-      Colors.orange,
-      Colors.white38,
-    ],
-    category: "Beauty",
-    review: "(20 Reviews)",
-    rate: 4.2,
-    quantity: 1,
-  ),
 ];
 
 final List<Product> womenFashion = [
@@ -416,6 +398,7 @@ final List<Product> womenFashion = [
     quantity: 1,
   ),
 ];
+
 final List<Product> jewelry = [
   Product(
     id: 22,
@@ -490,6 +473,7 @@ final List<Product> jewelry = [
     quantity: 1,
   ),
 ];
+
 final List<Product> menFashion = [
   Product(
     id: 26,
@@ -525,24 +509,6 @@ final List<Product> menFashion = [
     category: "MenFashion",
     review: "(500 Reviews)",
     rate: 4.5,
-    quantity: 1,
-  ),
-  Product(
-    id: 28,
-    title: "Men Shert",
-    description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat. In massa tempor nec feugiat nisl. Libero id faucibus nisl tincidunt.",
-    image: "images/men fashion/shert.png",
-    price: 300,
-    seller: "Roman Store",
-    colors: [
-      Colors.pink,
-      Colors.amber,
-      Colors.green,
-    ],
-    category: "menFashion",
-    review: "(200 Reviews)",
-    rate: 3.0,
     quantity: 1,
   ),
   Product(

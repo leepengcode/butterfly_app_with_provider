@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 class CartProvider extends ChangeNotifier {
   final List<Product> _cart = [];
   List<Product> get cart => _cart;
-  void toggleFavorite(Product product) {
+  void toggleCart(Product product) {
     if (_cart.contains(product)) {
       for (Product element in _cart) {
         element.quantity++;

@@ -28,9 +28,11 @@ class _DetailScreenState extends State<DetailScreen> {
             child: Column(
           children: [
             //App bar
-            DetailAppBar(),
+            DetailAppBar(
+              product: widget.product,
+            ),
             MyImageSlider(
-              itemCount: products.length,
+              itemCount: all.length,
               images: [widget.product.image],
               onChange: (index) {
                 setState(() {

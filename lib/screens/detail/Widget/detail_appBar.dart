@@ -1,16 +1,14 @@
+import 'package:butterfly_shop/Provider/favoriteProvider.dart';
+import 'package:butterfly_shop/models/product.dart';
 import 'package:flutter/material.dart';
 
-class DetailAppBar extends StatefulWidget {
-  const DetailAppBar({super.key});
+class DetailAppBar extends StatelessWidget {
+  final Product product;
+  const DetailAppBar({super.key, required this.product});
 
-  @override
-  State<DetailAppBar> createState() => _DetailAppBarState();
-}
-
-class _DetailAppBarState extends State<DetailAppBar> {
-  bool isLiked = false;
   @override
   Widget build(BuildContext context) {
+    final provider = FavoriteProvider.of(context);
     return Padding(
       padding: EdgeInsets.all(10),
       child: Row(
@@ -41,11 +39,9 @@ class _DetailAppBarState extends State<DetailAppBar> {
               backgroundColor: const Color.fromARGB(137, 211, 211, 211),
             ),
             onPressed: () {
-              setState(() {
-                isLiked = !isLiked;
-              });
+              provider.toggleFavorite(product);
             },
-            icon: isLiked
+            icon: provider.isExist(product)
                 ? const Icon(Icons.favorite, color: Colors.red)
                 : const Icon(Icons.favorite_border_outlined),
           )

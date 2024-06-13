@@ -9,35 +9,48 @@ class CategoryWidget extends StatefulWidget {
 }
 
 class _CategoryWidgetState extends State<CategoryWidget> {
+  var selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 100,
-      child: ListView.separated(
+      child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categoriesList.length,
         itemBuilder: (context, index) {
-          return Column(
-            children: [
-              Container(
-                width: 65,
-                height: 65,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image: AssetImage(categoriesList[index].image),
-                        fit: BoxFit.cover)),
+          return GestureDetector(
+            onTap: () {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+            child: Container(
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: selectedIndex == index
+                      ? Color.fromARGB(255, 184, 184, 184)
+                      : Colors.transparent),
+              child: Column(
+                children: [
+                  Container(
+                    width: 65,
+                    height: 65,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage(categoriesList[index].image),
+                            fit: BoxFit.cover)),
+                  ),
+                  SizedBox(
+                    height: 15,
+                    child: Text(categoriesList[index].title),
+                  )
+                ],
               ),
-              SizedBox(
-                height: 15,
-                child: Text(categoriesList[index].title),
-              )
-            ],
+            ),
           );
         },
-        separatorBuilder: (context, index) => SizedBox(
-          width: 25,
-        ),
       ),
     );
   }

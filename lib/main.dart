@@ -1,5 +1,6 @@
 import 'package:butterfly_shop/Component/ButtomNavigation.dart';
 import 'package:butterfly_shop/Provider/CartProvider.dart';
+import 'package:butterfly_shop/Provider/favoriteProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) => CartProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => FavoriteProvider(),
         )
       ],
       child: MaterialApp(
