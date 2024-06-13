@@ -1,5 +1,6 @@
 import 'package:butterfly_shop/Component/ButtomNavigation.dart';
 import 'package:butterfly_shop/Provider/CartProvider.dart';
+import 'package:butterfly_shop/screens/cart/check_out.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatefulWidget {
@@ -32,6 +33,7 @@ class _CartScreenState extends State<CartScreen> {
     }
 
     return Scaffold(
+      bottomSheet: CheckOutBox(),
       body: SafeArea(
           child: Column(
         children: [
